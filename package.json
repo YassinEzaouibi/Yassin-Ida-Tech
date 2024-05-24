@@ -1,8 +1,8 @@
 {
+  "homepage": "https://yassinezaouibi.github.io/Yassin-Ida-Tech",
   "name": "tail",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://yassinezaouibi.github.io/Yassin-ida-tech/",
   "type": "module",
   "scripts": {
     "dev": "vite",
