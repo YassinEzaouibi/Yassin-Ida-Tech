@@ -1,36 +1,34 @@
-// eslint-disable-next-line no-unused-vars
-import React, {useRef, useState} from 'react'
-import './Quiz.css'
-import {data} from '../../assets/data.js'
+import {useRef, useState} from 'react'
+import {idaData as data} from '../../assets/data/ida-data.js'
 
 const Quiz = () => {
 
     let [index, setIndex] = useState(0);
     let [question, setQuestion] = useState(data[index]);
     let [lock, setLock] = useState(false);
-    let [score, setScore] = useState(0);
-    let [result, setResult] = useState(false)
+    let [score, setScore] = useState({ Prudent: 0, modere: 0, Agressif: 0 });    let [result, setResult] = useState(false)
+    let [selectedChoice, setSelectedChoice] = useState(null);
+    // let [userChoices, setUserChoices] = useState({});
 
-    let options1 = useRef(null);
-    let options2 = useRef(null);
-    let options3 = useRef(null);
-    let options4 = useRef(null);
+    let options = useRef([]);
 
-    let option_array = [options1, options2, options3, options4];
+    // const checkAns = (e, ans) => {
+    //         const chosenPoints = question.points[ans];
+    //         const maxPointsCategory = Object.keys(chosenPoints).reduce((a, b) => chosenPoints[a] > chosenPoints[b] ? a : b);
+    //         setScore(prev => prev + chosenPoints[maxPointsCategory]);
+    //         setSelectedChoice(ans);
+    //         setLock(true);
+    // }
 
     const checkAns = (e, ans) => {
-        if (lock === false) {
-            if (question.ans === ans) {
-                e.target.classList.add("correct")
-                setLock(true)
-                setScore(prev => prev + 1)
-            } else {
-                e.target.classList.add("wrong")
-                setLock(true)
-                option_array[question.ans - 1].current.classList.add("correct")
-            }
-        }
-
+        const chosenPoints = question.points[ans];
+        setScore(prev => ({
+            Prudent: prev.Prudent + chosenPoints.Prudent,
+            modere: prev.modere + chosenPoints.modere,
+            Agressif: prev.Agressif + chosenPoints.Agressif
+        }));
+        setSelectedChoice(ans);
+        setLock(true);
     }
 
     const next = () => {
@@ -41,12 +39,8 @@ const Quiz = () => {
             }
             setIndex(++index);
             setQuestion(data[index]);
+            setSelectedChoice(null);
             setLock(false);
-            option_array.map((option) => {
-                option.current.classList.remove("correct")
-                option.current.classList.remove("wrong")
-                return null;
-            })
         }
     }
 
@@ -59,37 +53,34 @@ const Quiz = () => {
     }
 
     return (
-        <div className='container'>
-            <h1>Quiz App</h1>
-            <hr/>
+        <div className='container mx-auto text-black flex flex-col space-y-8 p-4 mt-6'>
+            <h1 className='text-3xl font-bold'> { question.group } </h1>
+            <hr className='h-0.5 bg-yellow-300 border-none'/>
             {
                 result ? <></> : <>
-                    <h2>{index + 1}. {question.question}</h2>
-                    <ul>
-                        <li ref={options1} onClick={(e) => {
-                            checkAns(e, 1)
-                        }}>{question.option1}</li>
-                        <li ref={options2} onClick={(e) => {
-                            checkAns(e, 2)
-                        }}>{question.option2}</li>
-                        <li ref={options3} onClick={(e) => {
-                            checkAns(e, 3)
-                        }}>{question.option3}</li>
-                        <li ref={options4} onClick={(e) => {
-                            checkAns(e, 4)
-                        }}>{question.option4}</li>
+                    <h2 className='text-2xl font-semibold mb-4'>{index + 1}. {question.question}</h2>
+                    <ul className='space-y-4'>
+                        {Object.keys(question.choices).map((key) => (
+                            <li key={key} ref={ref => options.current[key - 1] = ref} onClick={(e) => {
+                                checkAns(e, key)
+                            }} className={`flex items-center h-16 pl-6 border border-gray-600 rounded-lg text-lg cursor-pointer hover:bg-gray-200 ${selectedChoice === key ? 'bg-gray-300' : ''}`}>{question.choices[key]}</li>
+                        ))}
                     </ul>
-                    <button onClick={next}>Next</button>
-                    <div className='index'>{index + 1} of {data.length} questions</div>
+                    <button onClick={next} className='mx-auto w-64 h-16 bg-blue-600 text-white text-2xl font-bold rounded-lg cursor-pointer hover:bg-blue-800'>Next</button>
+                    <div className='mx-auto text-lg font-medium'>{index + 1} of {data.length} questions</div>
                 </>
             }
             {
-                result ? <>
-                    <h2>Your Score {score} out of {data.length}</h2>
-                    <button onClick={reset}>Reset</button>
-                </> : <></>
+                result ?
+                    <div className='flex flex-col items-center justify-center space-y-4 bg-blue-100 p-8 rounded-lg shadow-lg'>
+                        <h2 className='text-3xl font-bold text-blue-700'>Your Score</h2>
+                        <p className='text-xl text-blue-600'><span className="text-2xl font-semibold">Prudent:</span> {score.Prudent}</p>
+                        <p className='text-xl text-blue-600'><span className="text-2xl font-semibold">modere:</span> {score.modere}</p>
+                        <p className='text-xl text-blue-600'><span className="text-2xl font-semibold">Agressif: </span>{score.Agressif}</p>
+                        <button onClick={reset} className='w-64 h-12 bg-blue-600 text-white text-xl font-bold rounded-lg cursor-pointer hover:bg-blue-800'>Reset</button>
+                    </div>
+                    : <></>
             }
-
         </div>
     )
 }
