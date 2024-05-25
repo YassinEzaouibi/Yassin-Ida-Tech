@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9622c549-1b7b-4c83-9d52-65517b7be3eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/file" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/assets/data/ida-data.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/header/Header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/tail.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/data.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/questionnaire/Quiz.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/questionnaire/Quiz.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/questionnaire/Quiz.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/questionnaire/Quiz.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/tailwind.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/assets/index-0QMXvZo0.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/assets/index-CvK8hojg.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +89,7 @@
       <workItem from="1716503445552" duration="1749000" />
       <workItem from="1716512256937" duration="181000" />
       <workItem from="1716512459912" duration="10504000" />
-      <workItem from="1716560643586" duration="20925000" />
+      <workItem from="1716560643586" duration="21945000" />
     </task>
     <servers />
   </component>
