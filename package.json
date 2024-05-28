@@ -1,6 +1,6 @@
 {
-  "homepage": "https://yassinezaouibi.github.io/Yassin-Ida-Tech",
   "name": "tail",
+  "homepage": "https://yassinezaouibi.github.io/Yassin-Ida-Tech",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.19",
+    "gh-pages": "^6.1.1",
     "postcss": "^8.4.38",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
