@@ -6,19 +6,11 @@ const Quiz = () => {
     let [index, setIndex] = useState(0);
     let [question, setQuestion] = useState(data[index]);
     let [lock, setLock] = useState(false);
-    let [score, setScore] = useState({ Prudent: 0, modere: 0, Agressif: 0 });    let [result, setResult] = useState(false)
+    let [score, setScore] = useState({ Prudent: 0, modere: 0, Agressif: 0 });
+    let [result, setResult] = useState(false)
     let [selectedChoice, setSelectedChoice] = useState(null);
-    // let [userChoices, setUserChoices] = useState({});
 
     let options = useRef([]);
-
-    // const checkAns = (e, ans) => {
-    //         const chosenPoints = question.points[ans];
-    //         const maxPointsCategory = Object.keys(chosenPoints).reduce((a, b) => chosenPoints[a] > chosenPoints[b] ? a : b);
-    //         setScore(prev => prev + chosenPoints[maxPointsCategory]);
-    //         setSelectedChoice(ans);
-    //         setLock(true);
-    // }
 
     const checkAns = (e, ans) => {
         const chosenPoints = question.points[ans];
@@ -47,18 +39,21 @@ const Quiz = () => {
     const reset = () => {
         setIndex(0);
         setQuestion(data[0]);
-        setScore(0);
+        setScore({Prudent: 0, modere: 0, Agressif: 0});
         setLock(false);
         setResult(false);
     }
 
     return (
-        <div className='container mx-auto text-black flex flex-col space-y-8 p-4 mt-6'>
+        <div className='container mx-auto text-black flex flex-col space-y-6 p-4 mt-6 font-poppins'>
             <h1 className='text-3xl font-bold'> { question.group } </h1>
             <hr className='h-0.5 bg-yellow-300 border-none'/>
             {
                 result ? <></> : <>
-                    <h2 className='text-2xl font-semibold mb-4'>{index + 1}. {question.question}</h2>
+                    <div>
+                        <h2 className='text-2xl font-semibold mb-2'>{index + 1}. {question.question}</h2>
+                        {question.field && <li className='text-gray-600 font-semibold'>{question.field}</li>}
+                    </div>
                     <ul className='space-y-4'>
                         {Object.keys(question.choices).map((key) => (
                             <li key={key} ref={ref => options.current[key - 1] = ref} onClick={(e) => {

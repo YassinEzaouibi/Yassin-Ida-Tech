@@ -57,7 +57,7 @@ export const idaData = [
     {
         question_number: 4,
         group: "Situation Familiale",
-        question: "Combien de personnes sont à votre charge ?",
+        question: "Avez-vous un ou des enfant(s) à charge ?",
         field: "Personnes à charge",
         question_type: "marital_status",
         choices: {
@@ -429,8 +429,8 @@ export const idaData = [
         field: "L’affirmation ci-dessus vous semble-t-elle vraie ?",
         question_type: "affirmation",
         choices: {
-            1: "TRUE",
-            2: "FALSE",
+            1: "Oui",
+            2: "Non",
             3: "Je sais pas"
         },
         points: {
@@ -446,8 +446,8 @@ export const idaData = [
         field: "L’affirmation ci-dessus vous semble-t-elle vraie ?",
         question_type: "affirmation",
         choices: {
-            1: "TRUE",
-            2: "FALSE",
+            1: "Oui",
+            2: "Non",
             3: "Je sais pas"
         },
         points: {
@@ -463,8 +463,8 @@ export const idaData = [
         field: "L’affirmation ci-dessus vous semble-t-elle vraie ?",
         question_type: "affirmation",
         choices: {
-            1: "TRUE",
-            2: "FALSE",
+            1: "Oui",
+            2: "Non",
             3: "Je sais pas"
         },
         points: {

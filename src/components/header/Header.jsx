@@ -3,7 +3,7 @@ import logo from '../../assets/images/logo.svg';
 
 const Header = () => {
     return (
-        <header className="flex justify-between items-center bg-white text-gray-600 text-lg p-4 border-b-4 border-blue-600">
+        <header className="flex justify-between items-center bg-white text-gray-600 text-lg p-4 border-b-4 border-blue-600 font-poppins">
             <div className="cursor-pointer flex items-center gap-2 text-3xl ">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
                      stroke="#707070" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
