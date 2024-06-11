@@ -31,7 +31,7 @@ export const idaData = [
             2: "Femme"
         },
         points: {
-            1: { Prudent: 0, modere: 0, Agressif: 0 },
+            1: { Prudent: 1, modere: 0, Agressif: 0 },
             2: { Prudent: 0, modere: 0, Agressif: 0 }
         }
     },
@@ -564,11 +564,11 @@ export const idaData = [
         field: "",
         question_type: "market_fluctuation_tolerance",
         choices: {
-            1: "Avec une espérance de gain final de 5%, mais avec un risque de perte de 1%",
-            2: "Avec une espérance de gain final de 10%, mais avec un risque de perte de 5%",
-            3: "Avec une espérance de gain final de 20%, mais avec un risque de perte de 10%",
-            4: "Avec une espérance de gain final de 40%, mais avec un risque de perte de 15%",
-            5: "Avec une espérance de gain final de 60%, mais avec un risque de perte supérieur à 20%"
+            1: "Gain possible de 5%, risque de perte de 1%",
+            2: "Gain possible de 10%, risque de perte de 5%",
+            3: "Gain possible de 20%, risque de perte de 10%",
+            4: "Gain possible de 40%, risque de perte de 15%",
+            5: "Gain possible de 60%, risque de perte plus de 20%"
         },
         points: {
             1: { Prudent: 50, modere: 0, Agressif: 0 },
@@ -622,8 +622,8 @@ export const idaData = [
     },
     {
         question_number: 32,
-        group: "Quelle est votre attitude face à la réalisation d'un gain?",
-        question: "Supposons que votre investissement perde 10% en 6 mois, comment réagissez- vous ? ?",
+        group: "Tolérence au risque et réactions aux pertes",
+        question: "Quelle est votre attitude face à la réalisation d'un gain?",
         field: "Réalisation de gains et stratégie suivie",
         question_type: "market_fluctuation_tolerance",
         choices: {
